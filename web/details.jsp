@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Penjualan Sparepart/details</title>
     </head>
     <body>
         <% barang_master model = (barang_master) request.getAttribute("a"); %>
@@ -23,7 +23,7 @@
             kategori    : <%= model.getKategori()%><input type="hidden" name="kategori" value="<%= model.getKategori()%>"><br>
             harga       : <%= model.getHarga_jual()%><input type="hidden" name="harga_jual" value="<%= model.getHarga_jual() %>"><br>
             
-            Quantity :<input type="text" name="satuan" value="1"/><br><br>
+            Quantity :<input type="text" name="qty" value="1"/><br><br>
             <input type="hidden" name="act" value="add">
             <input type="submit" name="addToCart" value="tambah"><br/>
         </form>

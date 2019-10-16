@@ -3,13 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.ArrayList;
-import implDAO.implBarang_master;
-import connect.koneksi;
-import DAO.barangDAO;
 import model.barang_master;
 
-public final class penjualan_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class details_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,60 +46,50 @@ public final class penjualan_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Penjualan Sparepart/penjualan</title>\n");
+      out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("         ");
- 
-            barang_master bm = new barang_master();
-            barangDAO dao = new implBarang_master(koneksi.getConnection()); 
-            ArrayList<barang_master> barang = dao.listAll();
-         
-      out.write("\n");
-      out.write("         <h1>Daftar Harga</h1>\n");
       out.write("        ");
- for (int x=0 ;x< barang.size();x++)
-                { 
-         
+ barang_master model = (barang_master) request.getAttribute("a"); 
       out.write("\n");
-      out.write("         <table>\n");
-      out.write("             <thead>\n");
-      out.write("                <th>kode barang</th>\n");
-      out.write("                <th>nama barang</th>\n");
-      out.write("                <th>satuan</th>\n");
-      out.write("                <th> harga</th>\n");
-      out.write("             </thead>\n");
-      out.write("             <tbody>\n");
-      out.write("                <td>");
-      out.print( barang.get(x).getKode_barang());
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( barang.get(x).getNama_barang());
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( barang.get(x).getSatuan());
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( barang.get(x).getHarga_jual());
-      out.write("</td>\n");
-      out.write("                <td><a href=\"detailsBarang?act=detail&kode_barang=");
-      out.print(barang.get(x).getKode_barang() );
-      out.write("\">Details</a></td>\n");
-      out.write("             </tbody>\n");
-      out.write("         </table>\n");
-      out.write("               \n");
-      out.write("         ");
-}
-      out.write("\n");
-      out.write("          \n");
+      out.write("        <h1>Barang Details </h1>\n");
+      out.write("        <form method=\"POST\" action=\"cartController\">\n");
+      out.write("            \n");
+      out.write("            kode Barang : ");
+      out.print( model.getKode_barang());
+      out.write("<input type=\"hidden\" name=\"kode_barang\" value=\"");
+      out.print( model.getKode_barang());
+      out.write("\"><br>\n");
+      out.write("            nama Barang : ");
+      out.print( model.getNama_barang());
+      out.write("<input type=\"hidden\" name=\"nama_barang\" value=\"");
+      out.print( model.getNama_barang());
+      out.write("\"><br>\n");
+      out.write("            satuan      : ");
+      out.print( model.getSatuan() );
+      out.write("<input type=\"hidden\" name=\"satuan\" value=\"");
+      out.print( model.getSatuan());
+      out.write("\"><br>\n");
+      out.write("            kategori    : ");
+      out.print( model.getKategori());
+      out.write("<input type=\"hidden\" name=\"kategori\" value=\"");
+      out.print( model.getKategori());
+      out.write("\"><br>\n");
+      out.write("            harga       : ");
+      out.print( model.getHarga_jual());
+      out.write("<input type=\"hidden\" name=\"harga_jual\" value=\"");
+      out.print( model.getHarga_jual() );
+      out.write("\"><br>\n");
+      out.write("            \n");
+      out.write("            Quantity :<input type=\"text\" name=\"qty\" value=\"1\"/><br><br>\n");
+      out.write("            <input type=\"hidden\" name=\"act\" value=\"add\">\n");
+      out.write("            <input type=\"submit\" name=\"addToCart\" value=\"tambah\"><br/>\n");
+      out.write("        </form>\n");
+      out.write("         \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

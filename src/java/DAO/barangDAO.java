@@ -7,6 +7,7 @@ package DAO;
 
 import java.util.ArrayList;
 import model.barang_master;
+import model.penjualan;
 
 public interface barangDAO{
   public void insertBarang (barang_master model);
@@ -16,5 +17,7 @@ public interface barangDAO{
   public barang_master findBarang(String kode_barang);
   public barang_master prepareEdit(String kode_barang);
   public barang_master prepareDetail(String kode_barang);
+  public void updatePembayaran(int satuan, int qty, String kode_barang);
+  public void insertPenjualan (penjualan model);
 
 }

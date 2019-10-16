@@ -45,4 +45,12 @@ public class cartItemBean {
     public void setTotalHarga(int dblTotalHarga) {
         this.dblTotalHarga =  dblTotalHarga;
     }
+    public int getSatuan()
+    {
+        return satuan;
+    }
+    public void setSatuan(int satuan)
+    {
+        this.satuan=satuan;
+    }
 }

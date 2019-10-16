@@ -3,17 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/implDAO/implBarang_master.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/web/editBarang.jsp</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/DAO/barangDAO.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/web/penjualan.jsp</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/deleteBarang.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/edit_Barang.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/model/barang_master.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/homes.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/src/java/connect/koneksi.java</file>
-            <file>file:/C:/Users/Muhammad%20Ferly/Documents/NetBeansProjects/penjualan_sparepart/web/admin.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/deleteBarang.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/details.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/keranjang.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/homes.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/keranjangbean/cartItemBean.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/konfirmasi_pembayaran.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/model/barang_master.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/edit_Barang.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/detailsBarang.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/admin.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/implDAO/implBarang_master.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/penjualan.jsp</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/keranjangbean/cartBean.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/src/java/controller/cartController.java</file>
+            <file>file:/C:/Users/rian/Documents/NetBeansProjects/penjualan_sparepart/web/index.html</file>
         </group>
     </open-files>
 </project-private>

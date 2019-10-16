@@ -50,7 +50,7 @@ public class cartBean{
       }
    
     }
-        public void addCartItem(String kode_barang, String nama_barang,
+        public void addCartItem(String kode_barang, String nama_barang,int satuan,
         String strHarga, String strSatuan) {
           int dblTotalHarga = 0;
           int dblHarga = 0;
@@ -65,6 +65,7 @@ public class cartBean{
             cartItem.setNama_barang(nama_barang);
             cartItem.setHarga_jual(dblHarga);
             cartItem.setQuantity(iQty);
+            cartItem.setSatuan(satuan);
             cartItem.setTotalHarga(dblTotalHarga);
             alCartItems.add(cartItem);
             calculateOrderTotal();

@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import model.barang_master;
 import java.sql.*;
 import java.util.ArrayList;
+import model.penjualan;
 
 public class implBarang_master implements barangDAO
 {
@@ -187,6 +188,89 @@ public class implBarang_master implements barangDAO
     public barang_master prepareDetail(String kode_barang) {
         barang_master model = findBarang(kode_barang);
         return model;
+    }
+
+    @Override
+    public void updatePembayaran(int satuan, int qty, String kode_barang) {
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        int x =0;
+        int y =0;
+        int z=x-y;
+        try
+        { 
+           x = (satuan);
+           y = (qty);
+           z = x-y;
+
+            barang_master model = new barang_master();
+            String sql= "update master_barang set satuan=? where kode_barang='"+kode_barang+"'";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,z);
+            ps.executeUpdate();
+        }catch(SQLException ex)
+        {
+             Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        finally
+        {
+            if(ps!=null) try
+            {
+                ps.close();
+            }catch(SQLException ex)
+            {
+                  Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+            }
+            if(rs!=null) try
+            {
+                rs.close();
+            }catch(SQLException ex)
+            {
+                  Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+            }
+        }
+    }
+
+    @Override
+    public void insertPenjualan(penjualan model) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try 
+        {
+           
+            String sql = "insert into penjualan (tgl_faktur,no_faktur,nama_konsumen,kode_barang,jumlah,harga_satuan,harga_total) values(?,?,?,?,?,?,?)";
+            ps = connection.prepareStatement(sql);
+            ps.setDate(1,model.getTgl_faktur());
+            ps.setString(2,model.getNo_faktur());
+            ps.setString(3,model.getNama_konsumen());
+            ps.setString(4,model.getKode_barang());
+            ps.setInt(5,model.getJumlah());
+            ps.setInt(6,model.getHarga_satuan());
+            ps.setDouble(7,model.getHarga_total());
+            
+            
+            ps.executeUpdate();
+        }catch (SQLException ex)
+        {
+            Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        finally 
+        {
+            if (connection!=null) try
+            {
+               connection.close();
+            }catch(SQLException ex)
+            {
+                Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+            }
+            if (ps!=null) try
+            {
+                ps.close();
+            }catch(SQLException ex)
+            {
+                Logger.getLogger(implBarang_master.class.getName()).log(Level.SEVERE,null,ex);
+            }
+        }
     }
     
 }

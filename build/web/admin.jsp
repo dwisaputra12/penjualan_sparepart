@@ -15,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Penjualan Sparepart</title>
+        <title>Penjualan Sparepart/admin</title>
     </head>
     <body>
         <form name="tambah" method="POST"   action ="homes?act=tambah">
@@ -27,23 +27,17 @@
                 <input type="text" name="kode_barang" placeholder="masukan kode barang">
 <!--                <span class="text-danger" id="eror_nama"></span>-->
                 <br/><br/>
-                
-                <br/>
                 <input type="text" name="nama_barang" placeholder="masukan nama barang">
 <!--                <span class="text-danger" id="eror_alamat"></span>-->
                 <br/><br/>
-                
-                <br/>
                 <input type="text" name="harga_jual" placeholder="masukan harga jual" >
                 <span class="text-danger" id="eror_email"></span>
                 <br/><br/>
-                No Telp 
-                <br/>
                 <input type ="text" name="harga_beli" placeholder="masukan harga beli" >
                 <span class="text-danger" id="eror_phone"></span>
                 <br/><br/>
-               Password
-               <br/>
+               
+               
                <input type="text" name="satuan" placeholder="masukan satuan">
                <span class="text-danger" id="eror_password"></span>
                <br/><br/>

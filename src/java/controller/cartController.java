@@ -75,8 +75,7 @@ public class cartController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        String act = request.getParameter("act");
-       if(act.equals("")|| act!=null)
-       {
+     
            if (act.equals("add"))
            {
                addToCart(request);
@@ -88,7 +87,7 @@ public class cartController extends HttpServlet {
                deleteCart(request);
            }
            response.sendRedirect("keranjang.jsp");
-       }
+       
        
     }
       protected void deleteCart(HttpServletRequest request) {
@@ -122,8 +121,10 @@ public class cartController extends HttpServlet {
             HttpSession session = request.getSession();
             String kode_barang = request.getParameter("kode_barang");
             String nama_barang = request.getParameter("nama_barang");
+            int satuan = Integer.parseInt(request.getParameter("satuan"));
             String strHarga = request.getParameter("harga_jual");
-            String strSatuan = request.getParameter("satuan");
+            String strSatuan = request.getParameter("qty");
+           
 
             cartBean CartBean = null;
 
@@ -136,7 +137,7 @@ public class cartController extends HttpServlet {
              session.setAttribute("cart", CartBean);
             }
 
-            CartBean.addCartItem(kode_barang, nama_barang, strHarga, strSatuan);
+            CartBean.addCartItem(kode_barang, nama_barang, satuan, strHarga, strSatuan);
  }
 
     /**

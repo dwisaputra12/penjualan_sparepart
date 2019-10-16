@@ -9,7 +9,7 @@
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Penjualan Sparepart/keranjang</title>
     </head>
     <body>
            <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
@@ -32,13 +32,13 @@
             <c:forEach var="cartItem" items="${cart.cartItems}" varStatus="counter">
                 <form name="item" method="POST" action="CartController">
                     <tr>
+                        
                         <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b><c:out value="${cartItem.kode_barang}"/></b><br/></td>
                         <td>  <c:out value="${cartItem.nama_barang}"/></font></td>
                         <td>
-                            <input type='hidden' name='itemIndex' value='<c:out value="${counter.count}"/>'>
-                            <input type='text' name="qty" value='<c:out value="${cartItem.qty}"/>' size='2'> 
-                            <input type="submit" name="action" value="Update">
-                            <input type="submit" name="action" value="Delete">
+                            <input type='hidden' name="itemIndex" value='<c:out value="${counter.count}"/>'>
+                             <c:out value="${cartItem.qty}"/><input type='hidden' name="qty" value='<c:out value="${cartItem.qty}"/>' size='2'> 
+                            
                         </td>
                         <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Rp. <c:out value="${cartItem.harga_jual}"/></font></td>
                         <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Rp. <c:out value="${cartItem.totalHarga}"/></font></td>
@@ -49,10 +49,10 @@
                 <td colspan="2"> </td>
                 <td> </td>
                 <td></td>
-                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Subtotal: Rp. <c:out value="${cart.orderTotal}"/></font></td>
+                <td><font size="3" face="Verdana, Arial, Helvetica, sans-serif">Subtotal: Rp. <c:out value="${cart.orderTotal}"/></font></td>
             </tr>
         </table>
             <p><a href="penjualan.jsp" >Lanjut Belanja</a> </p>
-            <p><a href="#" >kembali</a></p>
+            <p><a href="konfirmasi_pembayaran.jsp" >bayar</a></p>
     </body>
 </html>

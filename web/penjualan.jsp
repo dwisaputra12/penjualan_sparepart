@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Penjualan Sparepart/penjualan</title>
     </head>
     <body>
          <% 
@@ -36,15 +36,9 @@
              <tbody>
                 <td><%= barang.get(x).getKode_barang()%></td>
                 <td><%= barang.get(x).getNama_barang()%></td>
-                <% int a= barang.get(x).getSatuan();
-                    if (a == 0)
-                    {
-                        out.println("stok habis");
-                    }
-                    %>
-                    <td><%= barang.get(x).getSatuan()%></td>
-                    <td><%= barang.get(x).getHarga_jual()%></td>
-                    <td><a href="detailsBarang?act=detail&kode_barang=<%=barang.get(x).getKode_barang() %>">Details</a></td>
+                <td><%= barang.get(x).getSatuan()%></td>
+                <td><%= barang.get(x).getHarga_jual()%></td>
+                <td><a href="detailsBarang?act=detail&kode_barang=<%=barang.get(x).getKode_barang() %>">Details</a></td>
              </tbody>
          </table>
                

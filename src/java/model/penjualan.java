@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.sql.*;
 
 public class penjualan
 {
@@ -14,8 +14,8 @@ public class penjualan
   private String nama_konsumen;
   private String kode_barang;
   private int jumlah;
-  private float harga_satuan;
-  private float harga_total;
+  private int harga_satuan;
+  private double harga_total;
   
   public Date getTgl_faktur()
   {
@@ -57,19 +57,19 @@ public class penjualan
   {
       this.jumlah=jumlah;
   }
-  public float getHarga_satuan()
+  public int getHarga_satuan()
   {
       return harga_satuan;
   }
-  public void setHarga_satuan(float harga_satuan)
+  public void setHarga_satuan(int harga_satuan)
   {
       this.harga_satuan=harga_satuan;
   }
-  public float getHarga_total()
+  public double getHarga_total()
   {
       return harga_total;
   }
-  public void setHarga_total(float harga_total)
+  public void setHarga_total(double harga_total)
   {
       this.harga_total=harga_total;
   }
