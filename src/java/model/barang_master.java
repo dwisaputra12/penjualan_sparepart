@@ -9,8 +9,8 @@ public class barang_master
 {
     private String kode_barang;
     private String nama_barang;
-    private float harga_jual;
-    private float harga_beli;
+    private int harga_jual;
+    private int harga_beli;
     private int satuan;
     private String kategori;
     
@@ -30,19 +30,19 @@ public class barang_master
     {
         this.nama_barang=nama_barang;
     }
-    public float getHarga_jual()
+    public int getHarga_jual()
     {
         return harga_jual;
     }
-    public void setHarga_jual(float harga_jual)
+    public void setHarga_jual(int harga_jual)
     {
         this.harga_jual=harga_jual;
     }
-    public float getHarga_beli()
+    public int getHarga_beli()
     {
         return harga_beli;
     }
-    public void setHarga_beli(float harga_beli)
+    public void setHarga_beli(int harga_beli)
     {
         this.harga_beli=harga_beli;
     }
@@ -62,4 +62,5 @@ public class barang_master
     {
         this.kategori=kategori;
     }
+   
 }

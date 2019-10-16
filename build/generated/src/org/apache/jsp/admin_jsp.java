@@ -142,9 +142,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(arr.get(x).getKategori());
       out.write("</td>\n");
       out.write("                 <td>\n");
-      out.write("                     <a href=\"Detail_Komoditas?act=Detail&kode=");
-      out.print(arr.get(x).getKode_barang() );
-      out.write("\">Detail</a>\n");
+      out.write("                     \n");
       out.write("                     <a href =\"edit_Barang?act=edit&kode_barang=");
       out.print(arr.get(x).getKode_barang() );
       out.write("\">EDIT</a>\n");

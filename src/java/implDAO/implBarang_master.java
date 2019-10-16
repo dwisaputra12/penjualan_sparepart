@@ -32,8 +32,8 @@ public class implBarang_master implements barangDAO
             ps = connection.prepareStatement(sql);
             ps.setString(1,model.getKode_barang());
             ps.setString(2,model.getNama_barang());
-            ps.setFloat(3,model.getHarga_jual());
-            ps.setFloat(4,model.getHarga_beli());
+            ps.setInt(3,model.getHarga_jual());
+            ps.setInt(4,model.getHarga_beli());
             ps.setInt(5,model.getSatuan());
             ps.setString(6,model.getKategori());
             
@@ -91,8 +91,8 @@ public class implBarang_master implements barangDAO
               barang_master model = new barang_master();
               model.setKode_barang(rs.getString("kode_barang"));
               model.setNama_barang(rs.getString("nama_barang"));
-              model.setHarga_jual(rs.getFloat("harga_jual"));
-              model.setHarga_beli(rs.getFloat("harga_beli"));
+              model.setHarga_jual(rs.getInt("harga_jual"));
+              model.setHarga_beli(rs.getInt("harga_beli"));
               model.setSatuan(rs.getInt("satuan"));
               model.setKategori(rs.getString("kategori"));
               result.add(model);
@@ -111,8 +111,8 @@ public class implBarang_master implements barangDAO
         try {
           ps = connection.prepareStatement("update master_barang set nama_barang=?,harga_jual=?,harga_beli=?,satuan=?,kategori=? where kode_barang=?");
            ps.setString(1,barang.getNama_barang()); 
-           ps.setFloat(2,barang.getHarga_beli());
-           ps.setFloat(3,barang.getHarga_jual());
+           ps.setInt(2,barang.getHarga_beli());
+           ps.setInt(3,barang.getHarga_jual());
            ps.setInt(4,barang.getSatuan());
            ps.setString(5,barang.getKategori());
            ps.setString(6,barang.getKode_barang());
@@ -165,8 +165,8 @@ public class implBarang_master implements barangDAO
         {
             bm.setKode_barang(kode_barang);
             bm.setNama_barang(rs.getString("nama_barang"));
-            bm.setHarga_beli(rs.getFloat("harga_beli"));
-            bm.setHarga_jual(rs.getFloat("harga_jual"));
+            bm.setHarga_beli(rs.getInt("harga_beli"));
+            bm.setHarga_jual(rs.getInt("harga_jual"));
             bm.setSatuan(rs.getInt("satuan"));
             bm.setKategori(rs.getString("kategori"));
         }

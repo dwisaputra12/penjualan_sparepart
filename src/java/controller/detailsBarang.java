@@ -20,10 +20,10 @@ import model.barang_master;
 
 /**
  *
- * @author Muhammad Ferly
+ * @author rian
  */
-@WebServlet(name = "edit_Barang", urlPatterns = {"/edit_Barang"})
-public class edit_Barang extends HttpServlet {
+@WebServlet(name = "detailsBarang", urlPatterns = {"/detailsBarang"})
+public class detailsBarang extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +42,10 @@ public class edit_Barang extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet edit_Barang</title>");            
+            out.println("<title>Servlet detailsBarang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet edit_Barang at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet detailsBarang at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,16 +63,20 @@ public class edit_Barang extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String act = request.getParameter("act");
-        String kode_barang = request.getParameter("kode_barang");
-        barangDAO dao = new implBarang_master(koneksi.getConnection());
-       if (act.equals("edit"));
+            barangDAO dao = new implBarang_master(koneksi.getConnection());
+       String act = request.getParameter("act");
+       String kode_barang = request.getParameter("kode_barang");
+       
+       if (act.equals("detail"))
        {
-           barang_master person = dao.prepareEdit(kode_barang);
-           request.setAttribute("a", person);
-           
-           RequestDispatcher rd = request.getRequestDispatcher("editBarang.jsp");
+           barang_master  model = dao.prepareDetail(kode_barang);
+           request.setAttribute("a",model);
+          RequestDispatcher rd = request.getRequestDispatcher("details.jsp");
            rd.forward(request, response);
+       }
+       if (act.equals("kembali"))
+       {
+           response.sendRedirect("penjualan.jsp");
        }
     }
 
@@ -87,29 +91,7 @@ public class edit_Barang extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String act= request.getParameter("act");
-        if(act.equals("edit"))
-        {
-        barangDAO dao = new implBarang_master(koneksi.getConnection());
-        String kode_barang=request.getParameter("kode_barang");
-        String nama_barang=request.getParameter("nama_barang");
-        int harga_jual=Integer.parseInt(request.getParameter("harga_jual"));
-        int harga_beli=Integer.parseInt(request.getParameter("harga_beli"));
-        int satuan = Integer.parseInt(request.getParameter("satuan"));
-        String kategori = request.getParameter("kategori");
-        
-        
-        barang_master model= new barang_master();
-        model.setKode_barang(kode_barang);
-        model.setNama_barang(nama_barang);
-        model.setHarga_beli(harga_beli);
-        model.setHarga_jual(harga_jual);
-        model.setSatuan(satuan);
-        model.setKategori(kategori);
-        
-        dao.editBarang(model);
-        response.sendRedirect("admin.jsp");
-    }
+        processRequest(request, response);
     }
 
     /**

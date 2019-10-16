@@ -39,8 +39,8 @@ public class homes extends HttpServlet {
                   { 
                    String kode_barang = request.getParameter("kode_barang");
                    String nama_barang = request.getParameter("nama_barang");
-                   float harga_jual   = Float.valueOf(request.getParameter("harga_jual"));
-                   float harga_beli   = Float.valueOf(request.getParameter("harga_beli"));
+                   int harga_jual   = Integer.parseInt(request.getParameter("harga_jual"));
+                   int harga_beli   = Integer.parseInt(request.getParameter("harga_beli"));
                    int satuan         = Integer.parseInt(request.getParameter("satuan"));
                    String kategori    = request.getParameter("kategori");
           
